@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Users List{% endblock %}
+
+{% block header %}
+<h1>Users</h1>
+<form action="/" id="home_button">
+    <input type="submit" value="Home" />
+</form>
+{% endblock %}
+
+{% block content %}
+
+
+<img src={{user.image_url}} alt="Italian Trulli">
+
+<h1>{{user.first_name}} {{user.last_name}}</h1>
+
+<form action="/users/{{user.id}}/edit" id="edit_button" method="GET">
+    <input type="submit" value="Edit" />
+</form>
+
+<form action="/users/{{user.id}}" id="delete_button" method="POST">
+    <input type="submit" value="Delete" />
+</form>
+
+
+{% endblock %}
